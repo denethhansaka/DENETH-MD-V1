@@ -36,7 +36,8 @@
     "api-dylux":"1.8.5",
     "mongoose":"8.7.1",
     "g-i-s":"2.1.7",
-    "moment-timezone":"0.5.46"
+    "moment-timezone":"0.5.46",
+    "ytsearch-venom": "^1.0.0"
 
   }
 }
