@@ -14,6 +14,7 @@
     "@blackamda/telegram-image-url": "^1.0.0",
     "@adiwajshing/baileys": "3.4.1",
     "@bochilteam/scraper": "^4.0.22-alpha.0",
+    "@sl-code-lords/esana-news": "latest",
     "ytdl-core": "^4.9.1",
     "pino": "^7.0.5",
     "pm2": "^5.2.0",
