@@ -16,6 +16,7 @@
     "@bochilteam/scraper": "^4.0.22-alpha.0",
     "@sl-code-lords/esana-news": "latest",
     "ytdl-core": "^4.9.1",
+    "inrl-dl": "^1.0.0",
     "pino": "^7.0.5",
     "pm2": "^5.2.0",
     "util": "^0.12.4",
