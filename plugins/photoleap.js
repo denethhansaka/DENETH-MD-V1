@@ -37,7 +37,7 @@ try {
     if (!q) return reply('Please provide a name');
     await conn.sendMessage(from, { 
         image: { url: `https://www.flamingtext.com/net-fu/proxy_form.cgi?&script=fluffy-logo&text=${q}` }, 
-        caption: '> 🇵​​🇴​​🇼​​🇪​​🇷​​🇪​​🇩​ ​🇧​​🇾​ ​🇩​​🇪​​🇳​​🇪​​🇹​​🇭​-​🇲​​🇩​ ​🇼​​🇭​​🇦​​🇹​​🇸​​🇦​​🇵​​🇵​ ​🇧​​🇴​​🇹​®` 
+        caption: '> 🇵​​🇴​​🇼​​🇪​​🇷​​🇪​​🇩​ ​🇧​​🇾​ ​🇩​​🇪​​🇳​​🇪​​🇹​​🇭​-​🇲​​🇩​ ​🇼​​🇭​​🇦​​🇹​​🇸​​🇦​​🇵​​🇵​ ​🇧​​🇴​​🇹​®' 
     }, {quoted: mek});
 
 } catch (e) {
