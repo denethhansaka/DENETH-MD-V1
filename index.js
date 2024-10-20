@@ -94,8 +94,25 @@ conn.ev.on('messages.upsert', async(mek) => {
 mek = mek.messages[0]
 if (!mek.message) return	
 mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_READ_STATUS === "true"){
-await conn.readMessages([mek.key])
+//----------------AUTO STATUS VIEW-------------------------------
+            if (config.STATUS_VIEW === 'true') {
+            if (mek.key && mek.key.remoteJid === 'status@broadcast') {
+            await conn.readMessages([mek.key])
+            }
+            }
+            if (mek.key && mek.key.remoteJid === 'status@broadcast') return
+	    if (config.ALWAYS_ONLINE == 'true'){
+                await conn.sendPresenceUpdate('available', mek.key.remoteJid)
+            }else{
+                await conn.sendPresenceUpdate('unavailable', mek.key.remoteJid)
+            }
+            if(config.AUTO_TYPING == true){
+                conn.sendPresenceUpdate('composing', mek.key.remoteJid)
+            }
+	    if(config.AUTO_RECORDING == true){
+                //await conn.sendPresenceUpdate('recording', mek.key.remoteJid)
+		conn.sendPresenceUpdate('recording', mek.key.remoteJid)
+            
 }
 const m = sms(conn, mek)
 const type = getContentType(mek.message)
@@ -148,75 +165,6 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
               }
             }
 
-
-//============================btn fuction============================================
-conn.sendButtonMessage = async (jid, buttons, quoted, opts = {}) => {
-    
-        let documentMessage = {
-            url: 'https://mmg.whatsapp.net/v/t62.7119-24/32511132_500473132560305_5925723291063172577_n.enc?ccb=11-4&oh=01_Q5AaIKnXNmUWgmxyNn_1uxfEnGyiI-eCZ-BMRZdX3O2jhQq2&oe=66BE7A32&_nc_sid=5e03e0&mms3=true',
-            mimetype: "application/pdf",
-            fileSha256: 'FikZgFEcHv5jpyU1PhL10sPCmtsmcqnWUKaxot10tUU=',
-            fileLength: 1e14,
-            mediaKey: 'RZ3iF3NexfIjD1MB9EfJhMo/xcBZnbEZ/gVSuxlrHWE=',
-            fileName: "💃𝐐𝐔𝐄𝐄𝐍 𝐊𝐄𝐍𝐙𝐈 𝐌𝐃 🤍",
-            fileEncSha256: 'K+Bkh4AGLJTffSvs63DuMZumwquU014W8XsaWvfakPM=',
-            directPath: '/v/t62.7119-24/32511132_500473132560305_5925723291063172577_n.enc?ccb=11-4&oh=01_Q5AaIKnXNmUWgmxyNn_1uxfEnGyiI-eCZ-BMRZdX3O2jhQq2&oe=66BE7A32&_nc_sid=5e03e0',
-        };
-
-                let message = generateWAMessageFromContent(jid, {
-                    viewOnceMessage: {
-                        message: {
-                            messageContextInfo: {
-                                deviceListMetadata: {},
-                                deviceListMetadataVersion: 2,
-                            },
-                            interactiveMessage: {
-                                body: {
-                                    text: opts && opts.body ? opts.body : ''
-                                },
-                                footer: {
-                                    text: opts && opts.footer ? opts.footer : ''
-                                },
-                                header: {
-                                    title: opts && opts.header ? opts.header : '',
-                                    hasMediaAttachment: true,
-                                    documentMessage,
-                                },
-                                nativeFlowMessage: {
-                                    buttons: buttons,
-                                    messageParamsJson: ''
-                                },
-                            contextInfo: {
-                              mentionedJid: ['0@s.whatsapp.net'],
-                              forwardingScore: 999,
-                              isForwarded: true,
-                              forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363192956026815@newsletter',
-                                newsletterName: "😼ＫＥＮＺＩ-ＭＤ🤍",
-                                serverMessageId: 999
-                            },
-                            externalAdReply: {
-                                mediaType: 1,
-                                previewType: 1,
-                                renderLargerThumbnail: true,
-                                sourceUrl: "https://whatsapp.com/channel/0029Va8f3smKWEKvPUzXQv34" ,
-                                thumbnailUrl: opts && opts.image ? opts.image : 'https://8030.us.kg/file/mKXIMtf1PF1i.jpg' ,
-                                title: 'Qᴜᴇᴇɴ-ᴋᴇɴᴢɪ ᴍᴅ ᴠ2',
-                                body: 'ᴀ ꜱɪᴍᴘʟᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ'
-                            }
-                        }
-                            }
-                        }
-                    }
-                },{
-                    quoted: quoted
-                })
-                //await conn.sendPresenceUpdate('composing', jid)
-                //await sleep(500 * 1);
-                conn.relayMessage(jid, message["message"], {
-                    messageId: message.key.id
-                })
-            }
 //------------Owner-React----------------------------
 if(senderNumber.includes("94760067200")){
 if(isReact) return
