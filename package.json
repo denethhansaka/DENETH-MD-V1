@@ -1,0 +1,36 @@
+{
+  "name": "𝗗𝗘𝗡𝗘𝗧𝗛-𝗠𝗗",
+  "version": "1.0.0",
+  "description": "𝙳𝙴𝙽𝙴𝚃𝙷 𝙼𝚞𝚕𝚝𝚒 𝙳𝚎𝚟𝚒𝚌𝚎 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝙱𝚘𝚝 𝟸𝟶𝟸𝟺®",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start index.js --deep-monitoring --attach --name DENETH-MD",
+    "stop": "pm2 stop DENETH-MD",
+    "restart": "pm2 restart DENETH-MD"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "git+https://github.com/20070808lk/Baileys",
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@adiwajshing/baileys": "3.4.1",
+    "ytdl-core": "^4.9.1",
+    "pino": "^7.0.5",
+    "pm2": "^5.2.0",
+    "util": "^0.12.4",
+    "express": "latest",
+    "axios": "^1.2.5",
+    "file_size_url": "^1.0.4",
+    "fs-extra": "^11.1.0",
+    "path": "^0.12.7",
+    "node-fetch": "^2.6.1",
+    "cheerio": "^1.0.0",
+    "megajs": "^1.1.0",
+    "vm": "^0.1.0",
+    "qrcode-terminal": "^0.12.0",
+    "yt-search":"2.12.1",
+    "api-dylux":"1.8.5",
+    "mongoose":"8.7.1",
+    "g-i-s":"2.1.7",
+    "moment-timezone":"0.5.46"
+
+  }
+}
