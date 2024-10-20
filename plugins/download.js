@@ -134,24 +134,3 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
         reply(`${e}`)
     }
 })
-
-//mediafire dl
-cmd({
-    pattern: "mediafire",
-    alias: ["mfire"],
-    desc: "download mfire files",
-    category: "download",
-    filename: __filename
-},
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        if (!q && !q.startsWith("https://")) return reply("give me mediafire url")
-        //fetch data from api  
-        let data = await fetchJson(`${baseUrl}/api/mediafiredl?url=${q}`)
-        reply("*🧚Downloading...*")
-        await conn.sendMessage(from, { document: { url: data.link_1 }, fileName: data.name, mimetype: data.file_type, caption: yourName }, { quoted: mek })                                                                                                                 
-    } catch (e) {
-        console.log(e)
-        reply(`${e}`)
-    }
-})
