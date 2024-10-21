@@ -18,7 +18,9 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 const data = await fetchJson('https://api.maher-zubair.tech/details/wabetainfo')
-let info = `*🥏 Title :* ${data.result.title}
+let info = `*DENETH-MD WA-BETA NEWS*
+
+*🥏 Title :* ${data.result.title}
 *📅 Date :* ${data.result.date}
 *🖥️ Platform :* ${data.result.updateFor}
 *🔗 URL :* ${data.result.link}
@@ -39,7 +41,7 @@ ${data.result.desc}
 *❓ Question :* ${data.result.QandA[3].question}
 *👨🏻‍💻 Answer :* ${data.result.QandA[3].answer}
 
-QUEEN KENZI WABETA NEWS`
+> 🇵🇴🇼🇪🇷🇪🇩 🇧🇾 🇩🇪🇳🇪🇹🇭-🇲🇩 🇼🇭🇦🇹🇸🇦🇵🇵 🇧🇴🇹`
 return await conn.sendMessage(from, { image: { url: data.result.image} , caption: info } , { quoted: mek })
 } catch (e) {
 console.log(e)
@@ -65,7 +67,7 @@ try{
             const res = ress.results;
 
             const txt2 = await conn.sendMessage(from, {image: 
-	    {url: res.COVER},caption: `\n┃◉⇨ 𝚃𝙸𝚃𝙻𝙴 :${res.TITLE}\n\n┃◉⇨ 𝙳𝙰𝚃𝙴 :${res.PUBLISHED}\n\n┃◉⇨ 𝚄𝚁𝙻 :${res.URL}\n\n┃◉ ⇨ 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽 : ${res.DESCRIPTION}\n\n*KENZI-MD ESANA NEWS ®*\n\n`},
+	    {url: res.COVER},caption: `*DENETH-MD ESANA NEWS*\n┃◉⇨ 𝚃𝙸𝚃𝙻𝙴 :${res.TITLE}\n\n┃◉⇨ 𝙳𝙰𝚃𝙴 :${res.PUBLISHED}\n\n┃◉⇨ 𝚄𝚁𝙻 :${res.URL}\n\n┃◉ ⇨ 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝚃𝙸𝙾𝙽 : ${res.DESCRIPTION}\n\n> 🇵🇴🇼🇪🇷🇪🇩 🇧🇾 🇩🇪🇳🇪🇹🇭-🇲🇩 🇼🇭🇦🇹🇸🇦🇵🇵 🇧🇴🇹\n\n`},
 			{ quoted: mek });
 await conn.sendMessage(from, { react: { text: `🗞️`, key: mek.key }}) 
 } catch (e) {
@@ -88,10 +90,14 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
 try{
 
 const data = await fetchJson('https://api.maher-zubair.tech/details/ios')
-let info = `*📃 Title :* ${data.result.title}
+let info = `*DENETH-MD IOS NEWS*
+
+*📃 Title :* ${data.result.title}
 *🕒 Time:* ${data.result.time} 
 *⛓️ Link:* ${data.result.link}
 *📚 Description:* ${data.result.desc}
+
+> 🇵🇴🇼🇪🇷🇪🇩 🇧🇾 🇩🇪🇳🇪🇹🇭-🇲🇩 🇼🇭🇦🇹🇸🇦🇵🇵 🇧🇴🇹
 `
 return await conn.sendMessage(from, { image: { url: data.result.images} , caption: info } , { quoted: mek })
 } catch (e) {
@@ -112,11 +118,13 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 const data = await fetchJson('https://api.maher-zubair.tech/details/tnews')
-let info = `*📃 Title :* ${data.result.title}
+let info = `*DENETH-MD TECH NEWS*
+
+*📃 Title :* ${data.result.title}
 *⛓️ Link:* ${data.result.link}
 *📚 Description:* ${data.result.desc}
 
-QUEEN KENZI TECH NEWS
+> 🇵🇴🇼🇪🇷🇪🇩 🇧🇾 🇩🇪🇳🇪🇹🇭-🇲🇩 🇼🇭🇦🇹🇸🇦🇵🇵 🇧🇴🇹
 `
 return await conn.sendMessage(from, { image: { url: data.result.img} , caption: info } , { quoted: mek })
 } catch (e) {
