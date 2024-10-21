@@ -20,26 +20,26 @@ try{
 const data = await fetchJson('https://api.maher-zubair.xyz/details/wa-beta-info?apikey=a816a62ac39f3d1b52')
 let info = `*DENETH-MD WA-BETA NEWS*
 
-*🥏 Title :* ${data.result.title}
-*📅 Date :* ${data.result.date}
-*🖥️ Platform :* ${data.result.updateFor}
-*🔗 URL :* ${data.result.link}
+*🥏 Title :* ${result.title}
+*📅 Date :* ${result.date}
+*🖥️ Platform :* ${result.updateFor}
+*🔗 URL :* ${result.link}
 *🗞️ Short Desc :*
-${data.result.desc}
+${result.desc}
 
 *ℹ️ FAQ*
 
-*❓ Question :* ${data.result.QandA[0].question}
-*👨🏻‍💻 Answer :* ${data.result.QandA[0].answer}
+*❓ Question :* ${result.QandA[0].question}
+*👨🏻‍💻 Answer :* ${result.QandA[0].answer}
 
-*❓ Question :* ${data.result.QandA[1].question}
-*👨🏻‍💻 Answer :* ${data.result.QandA[1].answer}
+*❓ Question :* ${result.QandA[1].question}
+*👨🏻‍💻 Answer :* ${result.QandA[1].answer}
 
-*❓ Question :* ${data.result.QandA[2].question}
-*👨🏻‍💻 Answer :* ${data.result.QandA[2].answer}
+*❓ Question :* ${result.QandA[2].question}
+*👨🏻‍💻 Answer :* ${result.QandA[2].answer}
 
-*❓ Question :* ${data.result.QandA[3].question}
-*👨🏻‍💻 Answer :* ${data.result.QandA[3].answer}
+*❓ Question :* ${result.QandA[3].question}
+*👨🏻‍💻 Answer :* ${result.QandA[3].answer}
 
 > 🇵🇴🇼🇪🇷🇪🇩 🇧🇾 🇩🇪🇳🇪🇹🇭-🇲🇩 🇼🇭🇦🇹🇸🇦🇵🇵 🇧🇴🇹`
 return await conn.sendMessage(from, { image: { url: data.result.image} , caption: info } , { quoted: mek })
@@ -92,10 +92,10 @@ try{
 const data = await fetchJson('https://api.maher-zubair.xyz/news/ios-latest?apikey=a816a62ac39f3d1b52')
 let info = `*DENETH-MD IOS NEWS*
 
-*📃 Title :* ${data.result.title}
-*🕒 Time:* ${data.result.time} 
-*⛓️ Link:* ${data.result.link}
-*📚 Description:* ${data.result.desc}
+*📃 Title :* ${result.title}
+*🕒 Time:* ${result.time} 
+*⛓️ Link:* ${result.link}
+*📚 Description:* ${result.desc}
 
 > 🇵🇴🇼🇪🇷🇪🇩 🇧🇾 🇩🇪🇳🇪🇹🇭-🇲🇩 🇼🇭🇦🇹🇸🇦🇵🇵 🇧🇴🇹
 `
