@@ -35,7 +35,7 @@ async function dlyta(url) {
                 if (mala.result.download_url) {
                     return {
                         status: true,
-                        dl_link: mala.result.download_url
+                        dl_link: result.download_url
                         }
                     };
                 }
