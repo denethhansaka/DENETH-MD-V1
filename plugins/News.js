@@ -17,7 +17,7 @@ cmd({
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-const data = await fetchJson('https://api.maher-zubair.tech/details/wabetainfo')
+const data = await fetchJson('https://api.maher-zubair.xyz/details/wa-beta-info?apikey=a816a62ac39f3d1b52')
 let info = `*DENETH-MD WA-BETA NEWS*
 
 *🥏 Title :* ${data.result.title}
@@ -89,7 +89,7 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 
-const data = await fetchJson('https://api.maher-zubair.tech/details/ios')
+const data = await fetchJson('https://api.maher-zubair.xyz/news/ios-latest?apikey=a816a62ac39f3d1b52')
 let info = `*DENETH-MD IOS NEWS*
 
 *📃 Title :* ${data.result.title}
