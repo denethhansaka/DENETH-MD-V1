@@ -28,7 +28,7 @@ async function dlyta(url) {
             const maxat = 10;
 
             for (let attempt = 0; attempt < maxat; attempt++) {
-                const gala = await fetch(`https://api-pink-venom.vercel.app/api/ytdl?url=${url}`);
+                const gala = await fetch(`https://api-pink-venom.vercel.app/api/ytdl?url=${url}`)
 
                 const mala = await gala.json();
 
@@ -61,14 +61,14 @@ cmd({
 
             const prog = await dlyta(q);
 
-            await conn.sendMessage(from, { audio: { url: prog.dl_link }, mimetype: 'audio/mpeg' }, { quoted: mek });
+            await conn.sendMessage(from, { audio: { url: prog.dl_link }, mimetype: 'audio/mpeg' }, { quoted: mek })
         } catch (e) {
             console.log('First attempt failed:', e);
 
             try {
                 const prog = await dlyta(q);
 
-            await conn.sendMessage(from, { audio: { url: prog.dl_link }, mimetype: 'audio/mpeg' }, { quoted: mek });
+            await conn.sendMessage(from, { audio: { url: prog.dl_link }, mimetype: 'audio/mpeg' }, { quoted: mek })
             } catch (error) {
                 console.log('Second attempt failed:', error);
                 await reply('Failed to process the request. Please try again later!');
