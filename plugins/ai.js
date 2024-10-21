@@ -6,7 +6,7 @@ const cheerio = require('cheerio')
 const axios = require("axios")
 const fetch = require('node-fetch')
 const vm = require('vm')
-let wm = `© 𝙳𝙴𝙽𝙴𝚃𝙷-𝙼𝙳 𝚅 ${require("../package.json").version} (Test)\n> ​🇵​​🇴​​🇼​​🇪​​🇷​​🇪​​🇩​ ​🇧​​🇾​ ​🇩​​🇪​​🇳​​🇪​​🇹​​🇭​-​🇲​​🇩​ ​🇼​​🇭​​🇦​​🇹​​🇸​​🇦​​🇵​​🇵​ ​🇧​​🇴​​🇹​®`
+let wm = `© 𝙳𝙴𝙽𝙴𝚃𝙷-𝙼𝙳 𝚅 ${require("../package.json").version} \n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅᴇɴᴇᴛʜ-ᴍᴅ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ​®`
 
 cmd({
     pattern: "blackbox",
