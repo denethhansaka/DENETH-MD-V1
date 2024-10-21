@@ -11,32 +11,7 @@ let baseUrl;
 
 
 const yourName = "*DENETH-MD*";
-//App Downloader
-cmd({
-    pattern: "apk",
-    alias: ["modapk"],
-    desc: "download apks",
-    category: "download",
-    react: "⚡",
-    filename: __filename
-},
-async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
-    try {
-        const appName = args.join(' ');
-        if (!appName) {
-            return reply("📱 Please provide the name of the app.")
-        }
-        //fetch data from api  
-        let data = await fetchJson(`https://api.maher-zubair.xyz/downloader/apk?apikey=a816a62ac39f3d1b52&q=${appName}`)
-        reply("*Please Wait...*")
-        await conn.sendMessage(from, { document: { url: data.dllink }, fileName: data.name,  caption: yourName }, { quoted: mek })                                                                                                                 
 
-    }
-    catch (e) {
-        console.log(e)
-        reply(`${e}`)
-    }
-})
 //fb downloader
 cmd({
     pattern: "fb",
@@ -115,7 +90,7 @@ async(conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, send
 
 //gdrive(google drive) dl
 cmd({
-    pattern: "gd",
+    pattern: "gdrive",
     alias: ["googledrive"],
     desc: "download gdrive files",
     category: "download",
